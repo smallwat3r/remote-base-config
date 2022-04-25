@@ -1,0 +1,5 @@
+This repository stores some minimal sane configs to work from remote servers.
+
+From remote server root directory, run:
+  curl https://github.com/smallwat3r/sane-remote-config/tarball/master -L -o dots.tar.gz \
+    && tar -xvf dots.tar.gz && cd smallwat3r-sane-remote-config-* && cp .* $HOME 
