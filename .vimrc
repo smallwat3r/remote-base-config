@@ -21,19 +21,13 @@ set diffopt+=vertical
 set visualbell t_vb=
 set foldmethod=marker
 set synmaxcol=500
-set listchars=tab:→\ ,eol:¬,extends:>,precedes:<,nbsp:˷,trail:␣
-set matchpairs+=<:>
 set clipboard+=unnamedplus
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.cache,*.dll,*.DS_Store,*.rdb,*.db,*.sqlite
-set wildignore+=__pycache__/*,venv/*,env/*,.git/*,build/*,node_modules/*,dist/*
 set noswapfile
 set nobackup
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undolevels=4000
 set undoreload=100000
-set undodir=~/.vim/undodir
 set undofile
 set expandtab
 set shiftwidth=2
@@ -61,12 +55,9 @@ augroup filetype_detect
   au BufRead,BufNewFile */nginx/**/*.conf         setf nginx
   au BufRead,BufNewFile *.{yaml,yml}              setf yaml
   au BufRead,BufNewFile gitconfig                 setf gitconfig
-  au BufRead,BufNewFile *.sketch                  setf sketch
   au BufRead,BufNewFile Dockerfile.*              setf dockerfile
   au BufRead,BufNewFile *.{dockerfile,Dockerfile} setf dockerfile
-  au BufRead,BufNewFile *.{applescript,osascript} setf applescript
   au BufRead,BufNewFile *.log                     setf log
-  au BufRead,BufNewFile *.html                    setf jinja
 augroup END
 
 augroup filetype_indentation
