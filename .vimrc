@@ -99,18 +99,6 @@ xmap > >gv
 xmap < <gv
 imap jk <esc>
 
-function! DefaultColors() abort
-  if &diff
-    syntax off
-  endif
-
-  hi CursorLineNR ctermbg=NONE
-  hi EndOfBuffer  ctermbg=NONE
-  hi Visual       cterm=reverse
-endfunction
-
-colo elflord
-augroup custom_colors
-  au!
-  au ColorScheme * call DefaultColors()
-augroup END
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
