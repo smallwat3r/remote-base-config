@@ -102,3 +102,40 @@ imap jk <esc>
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
+
+function! DefaultColors() abort
+  if &diff
+    syntax off
+  endif
+
+  hi CursorLineNR ctermbg=NONE
+  hi Comment      cterm=italic
+  hi DiffAdd      ctermfg=255  ctermbg=64
+  hi DiffChange   ctermfg=204  ctermbg=NONE cterm=NONE
+  hi DiffDelete   ctermfg=9    ctermbg=NONE cterm=NONE
+  hi DiffText     ctermfg=255  ctermbg=31
+  hi Directory    ctermbg=NONE
+  hi EndOfBuffer  ctermbg=NONE
+  hi IncSearch    ctermfg=232  ctermbg=229  cterm=bold
+  hi LineNr       ctermfg=239  ctermbg=NONE
+  hi MatchParen   ctermfg=203  ctermbg=190
+  hi NonText      ctermfg=202  ctermbg=NONE
+  hi Normal       ctermbg=NONE
+  hi Pmenu        ctermfg=242  ctermbg=235
+  hi PmenuSel     ctermfg=254  ctermbg=242
+  hi Search       ctermfg=232  ctermbg=11   cterm=NONE
+  hi SignColumn   ctermbg=NONE
+  hi SpellBad     ctermfg=88   ctermbg=210
+  hi SpellCap     ctermbg=159  ctermfg=17
+  hi StatuslineNC ctermfg=242  ctermbg=NONE cterm=underline
+  hi Todo         ctermbg=NONE ctermfg=120
+  hi VertSplit    ctermfg=242  ctermbg=NONE cterm=NONE
+  hi Visual       cterm=reverse
+endfunction
+
+colo desert
+
+augroup custom_colors
+  au!
+  au ColorScheme * call DefaultColors()
+augroup END
